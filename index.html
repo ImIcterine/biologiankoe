@@ -2,8 +2,29 @@
 <html>
     <head>
         <title>Lajitunnistus #2</title>
+        <link rel="stylesheet" href="style.css">
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
     </head>
     <body>
-        <h1>Sivu ei ole vielä valmis</h1>
+        <script src="script.js"></script>
+        <div class="startcontainer">
+            <h1 class="header">Biologian lajitunnistus #2</h1>
+            <fieldset style="width: calc(min(300px, 95%));">
+                <legend>Valitse lajityypit</legend>
+                
+                <div><input type="checkbox" class="startcbox" id="fish" name="fish" /> <label for="fish">Kalat</label></div>
+                <div><input type="checkbox" class="startcbox" id="birds" name="birds" /> <label for="birds">Linnut</label></div>
+                <div><input type="checkbox" class="startcbox" id="mammals" name="mammals" /> <label for="mammals">Nisäkkäät</label></div>
+            </fieldset>
+            
+            <button id="startbutton" onclick='prepare()'>Aloita!</button>
+            
+            <p id="warntext"></p>
+        </div>
+
+        <div class="appcontainer" style="display: none;">
+            
+        </div>
     </body>
 </html>
