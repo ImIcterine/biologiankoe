@@ -23,6 +23,7 @@ legend {
 }
 
 #warntext {
+    display: none;
     color: red;
 }
 

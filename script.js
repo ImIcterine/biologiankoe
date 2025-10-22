@@ -22,13 +22,13 @@ function prepare() {
 
     if (checked === 0) {
         const warntext = document.getElementById("warntext")
-        warntext.textContent = "Valitse ainakin yksi vaihtoehto!"
+        warntext.style.display = "block"
     } else start()
 }
 
 function start() {
     const warntext = document.getElementById("warntext")
-    warntext.textContent = ""
+    warntext.style.display = "none"
     
     const startCont = document.querySelector(".startcontainer")
     const appCont = document.querySelector(".appcontainer")
