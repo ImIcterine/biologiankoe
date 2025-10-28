@@ -29,7 +29,7 @@ function getAnimals() {
     let animalsTemp = {
         "fish": ["Ahven", "Kiiski", "Kuha", "Hauki", "Lahna", "Särki", "Salakka", "Ruutana", "Säyne", "Lohi", "Taimen", "Kirjolohi", "Muikku", "Siika", "Harjus", "Made", "Ankerias", "Nahkiainen"],
         "birds": ["Sinisorsa", "Lapasorsa", "Tukkasotka", "Punasotka", "Pilkkasiipi", "Tavi", "Haapana", "Tukkakoskelo", "Isokoskelo", "Telkkä", "Kyhmyjoutsen", "Laulujoutsen", "Kaakkuri", "Kuikka", "Härkälintu", "Silkkiuikku", "Mustakurkku-uikku", "Töyhtöhyyppä", "Isokuovi", "Rantasipi", "Taivaanvuohi", "Nokikana", "Kalalokki", "Naurulokki", "Harmaalokki", "Merilokki", "Kalatiira", "Merihanhi", "Kanadanhanhi", "Sääksi", "Merikotka", "Kurki"],
-        "mammals": ["Majava", "Saukko", "Minkki", "Piisami", "Vesipäästiäinen", "Vesimyyrä"]
+        "mammals": ["Majava", "Saukko", "Minkki", "Piisami", "Vesipäästäinen", "Vesimyyrä"]
     }
 
     animalsTemp.all = animalsTemp.fish.concat(animalsTemp.birds, animalsTemp.mammals)
