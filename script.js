@@ -93,14 +93,14 @@ function step(goback = false) {
     if (goback) {
         if (onStep > 0) {
             onStep -= 1
-            phtext.textContent = animals[onStep]
+            // phtext.textContent = animals[onStep]
             quimg.src = "assets/" + animals[onStep].toLowerCase() + ".png"
             quinput.value = ""
         }
     } else if (animals.length - 1 > onStep) {
         if (onStep >= 0) answers[animals[onStep]] = quinput.value.charAt(0).toUpperCase() + quinput.value.toLowerCase().slice(1)
         onStep += 1
-        phtext.textContent = animals[onStep]
+        // phtext.textContent = animals[onStep]
         quimg.src = "assets/" + animals[onStep].toLowerCase() + ".png"
         quinput.value = ""
     } else {
