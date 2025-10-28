@@ -3,11 +3,12 @@
     <head>
         <title>Lajitunnistus #2</title>
         <link rel="stylesheet" href="style.css">
+        <link rel="icon" type="image/x-icon" href="icon.png">
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
     </head>
     <body>
-        <script src="script.js"></script>
+        <script src="script.js" defer></script>
         <div class="startcontainer">
             <h1 class="header">Biologian lajitunnistus #2</h1>
             <fieldset style="width: calc(min(300px, 95%));">
@@ -16,6 +17,7 @@
                 <div><input type="checkbox" class="startcbox" id="fish" name="fish" /> <label for="fish">Kalat</label></div>
                 <div><input type="checkbox" class="startcbox" id="birds" name="birds" /> <label for="birds">Linnut</label></div>
                 <div><input type="checkbox" class="startcbox" id="mammals" name="mammals" /> <label for="mammals">Nisäkkäät</label></div>
+                <div><input type="checkbox" class="startcbox" id="random20" name="random20" /> <label for="random20">20 satunnaista</label></div>
             </fieldset>
             
             <button id="startbutton" onclick='prepare()'>Aloita!</button>
@@ -24,7 +26,21 @@
         </div>
 
         <div class="appcontainer" style="display: none;">
-            <h1>en mä tiiä</h1>
+            <p class="biggertext">Mikä eläin?</p>
+            <p id="phtext"></p>
+            <img id="questionimage" src="assets/ahven.png">
+            <input type="text" id="questioninput" placeholder="Vastaa tähän"/>
+            <div class="buttoncontainer">
+                <button onclick="step()" class="appbutton" id="nextbutton">Seuraava</button>
+                <button onclick="step(true)" class="appbutton" id="backbutton">Mene takaisin</button>
+            </div>
+        </div>
+
+        <div class="rescontainer" style="display: none;">
+            <h1 class="header">Tulos</h1>
+            <p class="biggertext" id="resnum">eeeeeeeeeeeeeeeeeeeeeeeeee</p>
+            <p id="restext"></p>
+            <button onclick='finish()'>Valmis</button>
         </div>
     </body>
 </html>

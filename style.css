@@ -1,3 +1,7 @@
+body {
+    font-family: Calibri;
+}
+
 fieldset {
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
@@ -13,7 +17,7 @@ legend {
     margin: 5px;
 }
 
-.startcontainer, .appcontainer {
+.startcontainer, .appcontainer, .rescontainer {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -33,4 +37,47 @@ legend {
     width: 100%;
     text-align: center;
     margin: 0.5em 0;
+}
+
+input[type="checkbox"]:disabled {
+    opacity: 0.8;
+    cursor: not-allowed;
+}
+
+#random20 {
+    margin-top: 10px;
+}
+
+.biggertext {
+    font-size: 30px;
+    font-weight: 600;
+    white-space: normal;
+    overflow-wrap: break-word;
+    width: 100%;
+    text-align: center;
+}
+
+#questioninput {
+    margin: 10px;
+    width: 50%;
+}
+
+.buttoncontainer {
+    display: flex;
+}
+
+.appbutton {
+    margin: 5px;
+}
+
+#restext {
+    white-space: normal;
+    overflow-wrap: break-word;
+    width: 100%;
+    text-align: center;
+}
+
+#questionimage {
+    width: 85%;
+    border-radius: 10px;
 }
