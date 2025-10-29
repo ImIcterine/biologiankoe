@@ -14,6 +14,18 @@ textinput.addEventListener("keydown", (event) => {
     }
 })
 
+function intIfWhole(num) {
+    if (Number.isInteger(num)) {
+        return num
+    }
+    
+    if (num % 1 === 0) {
+        return Math.floor(num)
+    }
+    
+    return num
+}
+
 function shuffle(ogarr) {
     let narr = []
     let arr = ogarr.slice()
@@ -93,14 +105,14 @@ function step(goback = false) {
     if (goback) {
         if (onStep > 0) {
             onStep -= 1
-            // phtext.textContent = animals[onStep]
+            // PLACEHOLDER TEXT: phtext.textContent = animals[onStep]
             quimg.src = "assets/" + animals[onStep].toLowerCase() + ".png"
             quinput.value = ""
         }
     } else if (animals.length - 1 > onStep) {
         if (onStep >= 0) answers[animals[onStep]] = quinput.value.charAt(0).toUpperCase() + quinput.value.toLowerCase().slice(1)
         onStep += 1
-        // phtext.textContent = animals[onStep]
+        // PLACEHOLDER TEXT: phtext.textContent = animals[onStep]
         quimg.src = "assets/" + animals[onStep].toLowerCase() + ".png"
         quinput.value = ""
     } else {
@@ -123,7 +135,7 @@ function step(goback = false) {
             }
         })
 
-        resnum.textContent = "Tuloksesi on " + resultnum + "/" + animals.length + " (" + (resultnum / animals.length * 100).toFixed(1) + "%)"
+        resnum.textContent = "Tuloksesi on " + resultnum + "/" + animals.length + " (" + intIfWhole((resultnum / animals.length * 100).toFixed(1)) + "%)"
     }
 }
 
