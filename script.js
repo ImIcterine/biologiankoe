@@ -10,10 +10,10 @@ const alternates = {
 
 const textinput = document.getElementById("questioninput")
 textinput.addEventListener("keydown", (event) => {
-    if (event.key === "Enter" || event.key === "ArrowRight") {
+    if (event.key === "Enter" || (event.key === "ArrowRight" && event.shiftKey)) {
         document.getElementById("nextbutton").click()
     }
-    if (event.key === "ArrowLeft") {
+    if (event.key === "ArrowLeft" && event.shiftKey) {
         document.getElementById("backbutton").click()
     }
 })
