@@ -1,5 +1,7 @@
 body {
     font-family: Calibri, "Segoe UI", "Carlito", Roboto, Arial, sans-serif;
+    background-color: #111111;
+    color: white;
 }
 
 fieldset {

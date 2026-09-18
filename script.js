@@ -1,8 +1,12 @@
 let checked = 0
-const values = {"fish": 1, "birds": 2, "mammals": 4}
-let animals = null
+const values = { plants: 1 }
+let species = null
 let onStep = 0
 let answers = null
+
+const alternates = {
+    "Käenkaali": ["Käenkaali", "Ketunleipä"]
+}
 
 const textinput = document.getElementById("questioninput")
 textinput.addEventListener("keydown", (event) => {
@@ -37,15 +41,22 @@ function shuffle(ogarr) {
     return narr
 }
 
-function getAnimals() {
-    let animalsTemp = {
-        "fish": ["Ahven", "Kiiski", "Kuha", "Hauki", "Lahna", "Särki", "Salakka", "Ruutana", "Säyne", "Lohi", "Taimen", "Kirjolohi", "Muikku", "Siika", "Harjus", "Made", "Ankerias", "Nahkiainen"],
-        "birds": ["Sinisorsa", "Lapasorsa", "Tukkasotka", "Punasotka", "Pilkkasiipi", "Tavi", "Haapana", "Tukkakoskelo", "Isokoskelo", "Telkkä", "Kyhmyjoutsen", "Laulujoutsen", "Kaakkuri", "Kuikka", "Härkälintu", "Silkkiuikku", "Mustakurkku-uikku", "Töyhtöhyyppä", "Isokuovi", "Rantasipi", "Taivaanvuohi", "Nokikana", "Kalalokki", "Naurulokki", "Harmaalokki", "Merilokki", "Kalatiira", "Merihanhi", "Kanadanhanhi", "Sääksi", "Merikotka", "Kurki"],
-        "mammals": ["Majava", "Saukko", "Minkki", "Piisami", "Vesipäästäinen", "Vesimyyrä"]
+function getSpecies() {
+    let speciesTemp = {
+        plants: [
+            "Kuusi", "Mänty", "Kataja",
+            "Hieskoivu", "Rauduskoivu", "Vaivaiskoivu", "Harmaaleppä", "Tervaleppä", "Pihlaja", "Haapa",
+            "Vaahtera", "Tammi", "Lehmus",
+            "Paju", "Tuomi",
+            "Mustikka", "Puolukka", "Variksenmarja", "Juolukka", "Kanerva", "Suopursu", "Vanamo",
+            "Valkovuokko", "Sinivuokko", "Metsätähti", "Maitohorsma", "Käenkaali", "Kangasmaitikka", "Kultapiisku", "Sudenmarja", "Kielo", "Oravanmarja", "Metsäorvokki",
+            "Rahkasammal", "Karhunsammal", "Kynsisammal", "Kerrossammal", "Sulkasammal", "Seinäsammal",
+            "Naava", "Torvijäkälä", "Harmaaporonjäkälä", "Keräporonjäkälä", "Hirvenjäkälä",
+        ],
     }
-
-    animalsTemp.all = animalsTemp.fish.concat(animalsTemp.birds, animalsTemp.mammals)
-    return animalsTemp
+    speciesTemp.all = speciesTemp.plants
+    // speciesTemp.all = speciesTemp.plants.concat(speciesTemp.birds, speciesTemp.mammals)
+    return speciesTemp
 }
 
 function prepare() {
@@ -71,25 +82,27 @@ function start() {
     startCont.style.display = "none"
     appCont.style.display = "flex"
 
-    animals = []
-    let animalsBin = checked
-    
-    if (animalsBin >= 4) {
-        animals = animals.concat(getAnimals().mammals)
-        animalsBin -= 4
+    species = []
+    let speciesBin = checked
+
+    /*
+    if (speciesBin >= 4) {
+        species = species.concat(getSpecies().mammals)
+        speciesBin -= 4
     }
-    if (animalsBin >= 2) {
-        animals = animals.concat(getAnimals().birds)
-        animalsBin -= 2
+    if (speciesBin >= 2) {
+        species = species.concat(getSpecies().birds)
+        speciesBin -= 2
     }
-    if (animalsBin >= 1) {
-        animals = animals.concat(getAnimals().fish)
-        animalsBin -= 1
+    */
+    if (speciesBin >= 1) {
+        species = species.concat(getSpecies().plants)
+        speciesBin -= 1
     }
-    animals = shuffle(animals)
+    species = shuffle(species)
 
     if (document.getElementById("random20").checked === true) {
-        animals = animals.slice(0, 20)
+        species = species.slice(0, 20)
     }
 
     onStep = -1
@@ -105,18 +118,18 @@ function step(goback = false) {
     if (goback) {
         if (onStep > 0) {
             onStep -= 1
-            // PLACEHOLDER TEXT: phtext.textContent = animals[onStep]
-            quimg.src = "assets/" + animals[onStep].toLowerCase() + ".png"
+            // PLACEHOLDER TEXT: phtext.textContent = species[onStep]
+            quimg.src = "assets/" + species[onStep].toLowerCase() + ".png"
             quinput.value = ""
         }
-    } else if (animals.length - 1 > onStep) {
-        if (onStep >= 0) answers[animals[onStep]] = quinput.value.charAt(0).toUpperCase() + quinput.value.toLowerCase().slice(1)
+    } else if (species.length - 1 > onStep) {
+        if (onStep >= 0) answers[species[onStep]] = quinput.value.charAt(0).toUpperCase() + quinput.value.toLowerCase().slice(1)
         onStep += 1
-        // PLACEHOLDER TEXT: phtext.textContent = animals[onStep]
-        quimg.src = "assets/" + animals[onStep].toLowerCase() + ".png"
+        // PLACEHOLDER TEXT: phtext.textContent = species[onStep]
+        quimg.src = "assets/" + species[onStep].toLowerCase() + ".png"
         quinput.value = ""
     } else {
-        answers[animals[onStep]] = quinput.value.charAt(0).toUpperCase() + quinput.value.toLowerCase().slice(1)
+        answers[species[onStep]] = quinput.value.charAt(0).toUpperCase() + quinput.value.toLowerCase().slice(1)
         const resCont = document.querySelector(".rescontainer")
         const appCont = document.querySelector(".appcontainer")
         resCont.style.display = "flex"
@@ -126,8 +139,18 @@ function step(goback = false) {
         const resnum = document.getElementById("resnum")
         const restext = document.getElementById("restext")
         restext.textContent = ""
-        animals.forEach((v) => {
+        species.forEach((v) => {
+            let correct = false
+
+            if (alternates[v]) {
+                if (alternates[v].includes(answers[v])) correct = true
+            }
+
             if (v === answers[v]) {
+                correct = true
+            }
+
+            if (correct) {
                 restext.innerHTML += "🟢 " + v + "<br />"
                 resultnum++
             } else {
@@ -135,7 +158,7 @@ function step(goback = false) {
             }
         })
 
-        resnum.textContent = "Tuloksesi on " + resultnum + "/" + animals.length + " (" + intIfWhole((resultnum / animals.length * 100).toFixed(1)) + "%)"
+        resnum.textContent = "Tuloksesi on " + resultnum + "/" + species.length + " (" + intIfWhole((resultnum / species.length * 100).toFixed(1)) + "%)"
     }
 }
 

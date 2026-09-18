@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Lajitunnistus #2</title>
+        <title>Lajientunnistus</title>
         <link href="https://fonts.googleapis.com/css2?family=Carlito&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="style.css">
         <link rel="icon" type="image/x-icon" href="icon.png">
@@ -11,13 +11,11 @@
     <body>
         <script src="script.js" defer></script>
         <div class="startcontainer">
-            <h1 class="header">Biologian lajitunnistus #2</h1>
+            <h1 class="header">Biologian lajientunnistus</h1>
             <fieldset style="width: calc(min(300px, 95%));">
                 <legend>Valitse lajityypit</legend>
                 
-                <div><input type="checkbox" class="startcbox" id="fish" name="fish" /> <label for="fish">Kalat</label></div>
-                <div><input type="checkbox" class="startcbox" id="birds" name="birds" /> <label for="birds">Linnut</label></div>
-                <div><input type="checkbox" class="startcbox" id="mammals" name="mammals" /> <label for="mammals">Nisäkkäät</label></div>
+                <div><input type="checkbox" class="startcbox" id="plants" name="plants" /> <label for="plants">Kasvit</label></div>
                 <div><input type="checkbox" class="startcbox" id="random20" name="random20" /> <label for="random20">20 satunnaista</label></div>
             </fieldset>
             
@@ -27,7 +25,7 @@
         </div>
 
         <div class="appcontainer" style="display: none;">
-            <p class="biggertext">Mikä eläin?</p>
+            <p class="biggertext">Mikä laji?</p>
             <p id="phtext"></p>
             <img id="questionimage" src="assets/ahven.png">
             <input type="text" id="questioninput" placeholder="Vastaa tähän"/>
