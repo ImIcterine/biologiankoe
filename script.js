@@ -5,7 +5,8 @@ let onStep = 0
 let answers = null
 
 const alternates = {
-    "Käenkaali": ["Käenkaali", "Ketunleipä"]
+    "Käenkaali": ["Käenkaali", "Ketunleipä"],
+    "Keräporonjäkälä": ["Keräporonjäkälä", "Palleroporonjäkälä"]
 }
 
 const textinput = document.getElementById("questioninput")
