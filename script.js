@@ -1,12 +1,11 @@
 let checked = 0
-const values = { plants: 1 }
+const values = { plants: 1, mammals: 2, birds: 4, invertebrates: 8 }
 let species = null
 let onStep = 0
 let answers = null
 
 const alternates = {
     "Käenkaali": ["Käenkaali", "Ketunleipä"],
-    "Keräporonjäkälä": ["Keräporonjäkälä", "Palleroporonjäkälä"]
 }
 
 const textinput = document.getElementById("questioninput")
@@ -54,9 +53,23 @@ function getSpecies() {
             "Rahkasammal", "Karhunsammal", "Kynsisammal", "Kerrossammal", "Sulkasammal", "Seinäsammal",
             "Naava", "Torvijäkälä", "Harmaaporonjäkälä", "Keräporonjäkälä", "Hirvenjäkälä",
         ],
+
+        mammals: [
+            "Valkohäntäpeura", "Metsäkauris", "Hirvi", "Supikoira", "Kontiainen", "Kärppä", "Lumikko", "Mäyrä", "Rusakko", "Metsäjänis", "Ilves", "Kettu", "Karhu", "Susi", "Orava", "Liito-orava", "Metsäpäästäinen", "Metsähiiri", "Metsämyyrä", "Ahma", "Näätä",
+        ],
+
+        birds: [
+            "Helmipöllö", "Varpuspöllö", "Hiiripöllö", "Lehtopöllö", "Viirupöllö", "Huuhkaja", "Sarvipöllö", "Kanahaukka", "Varpushaukka",
+            "Pajulinnut", "Peippo", "Metsäkirvinen", "Talitiainen", "Töyhtötiainen", "Sinitiainen", "Puukiipijä", "Hömötiainen", "Hippiäinen", "Kirjosieppo", "Metso", "Teeri", "Pyy", "Punatulkku", "Varis", "Harakka", "Närhi", "Mustarastas", "Punakylkirastas", "Räkättirastas", "Käpylintu", "Käpytikka", "Palokärki", "Tiihi",
+        ],
+
+        invertebrates: [
+            "Ampiainen", "Kimalainen", "Mehiläinen", "Pistiäinen", "Kotilo", "Etana", "Nokkosperhonen", "Suruvaippa", "Amiraali", "Neitoperhonen", "Ritariperhonen", "Punkki", "LUkki", "Ristihämähäkki", "Susihämähäkki", "Kekomuurahainen", "Juoksujalkainen", "Kaksoisjalkainen", "Maasiira", "Sarvijäärä", "Maakiitäjäinen", "Lude",
+        ],
     }
-    speciesTemp.all = speciesTemp.plants
-    // speciesTemp.all = speciesTemp.plants.concat(speciesTemp.birds, speciesTemp.mammals)
+    
+    //speciesTemp.all = speciesTemp.plants
+    speciesTemp.all = speciesTemp.plants.concat(speciesTemp.birds, speciesTemp.mammals, speciesTemp.invertebrates)
     return speciesTemp
 }
 
@@ -86,16 +99,18 @@ function start() {
     species = []
     let speciesBin = checked
 
-    /*
+    if (speciesBin >= 8) {
+        species = species.concat(getSpecies().invertebrates)
+        speciesBin -= 8
+    }
     if (speciesBin >= 4) {
-        species = species.concat(getSpecies().mammals)
+        species = species.concat(getSpecies().birds)
         speciesBin -= 4
     }
     if (speciesBin >= 2) {
-        species = species.concat(getSpecies().birds)
+        species = species.concat(getSpecies().mammals)
         speciesBin -= 2
     }
-    */
     if (speciesBin >= 1) {
         species = species.concat(getSpecies().plants)
         speciesBin -= 1
