@@ -60,11 +60,11 @@ function getSpecies() {
 
         birds: [
             "Helmipöllö", "Varpuspöllö", "Hiiripöllö", "Lehtopöllö", "Viirupöllö", "Huuhkaja", "Sarvipöllö", "Kanahaukka", "Varpushaukka",
-            "Pajulintu", "Peippo", "Metsäkirvinen", "Talitiainen", "Töyhtötiainen", "Sinitiainen", "Puukiipijä", "Hömötiainen", "Hippiäinen", "Kirjosieppo", "Metso", "Teeri", "Pyy", "Punatulkku", "Varis", "Harakka", "Närhi", "Mustarastas", "Punakylkirastas", "Räkättirastas", "Käpylintu", "Käpytikka", "Palokärki", "Tilhi",
+            "Pajulintu", "Peippo", "Metsäkirvinen", "Talitiainen", "Töyhtötiainen", "Sinitiainen", "Puukiipijä", "Hömötiainen", "Hippiäinen", "Kirjosieppo", "Metso", "Teeri", "Pyy", "Punatulkku", "Varis", "Harakka", "Närhi", "Mustarastas", "Punakylkirastas", "Räkättirastas", "Käpylintu", "Käpytikka", "Palokärki", "Tilhi", "Punarinta", "Leppälintu",
         ],
 
         invertebrates: [
-            "Ampiainen", "Kimalainen", "Mehiläinen", "Pistiäinen", "Kotilo", "Etana", "Nokkosperhonen", "Suruvaippa", "Amiraali", "Neitoperhonen", "Ritariperhonen", "Punkki", "LUkki", "Ristihämähäkki", "Susihämähäkki", "Kekomuurahainen", "Juoksujalkainen", "Kaksoisjalkainen", "Maasiira", "Sarvijäärä", "Maakiitäjäinen", "Lude",
+            "Ampiainen", "Kimalainen", "Mehiläinen", "Pistiäinen", "Kotilo", "Etana", "Nokkosperhonen", "Suruvaippa", "Amiraali", "Neitoperhonen", "Ritariperhonen", "Punkki", "Lukki", "Ristihämähäkki", "Susihämähäkki", "Kekomuurahainen", "Juoksujalkainen", "Kaksoisjalkainen", "Maasiira", "Sarvijäärä", "Maakiitäjäinen", "Lude",
         ],
     }
     
