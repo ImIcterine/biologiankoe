@@ -60,7 +60,7 @@ function getSpecies() {
 
         birds: [
             "Helmipöllö", "Varpuspöllö", "Hiiripöllö", "Lehtopöllö", "Viirupöllö", "Huuhkaja", "Sarvipöllö", "Kanahaukka", "Varpushaukka",
-            "Pajulinnut", "Peippo", "Metsäkirvinen", "Talitiainen", "Töyhtötiainen", "Sinitiainen", "Puukiipijä", "Hömötiainen", "Hippiäinen", "Kirjosieppo", "Metso", "Teeri", "Pyy", "Punatulkku", "Varis", "Harakka", "Närhi", "Mustarastas", "Punakylkirastas", "Räkättirastas", "Käpylintu", "Käpytikka", "Palokärki", "Tiihi",
+            "Pajulintu", "Peippo", "Metsäkirvinen", "Talitiainen", "Töyhtötiainen", "Sinitiainen", "Puukiipijä", "Hömötiainen", "Hippiäinen", "Kirjosieppo", "Metso", "Teeri", "Pyy", "Punatulkku", "Varis", "Harakka", "Närhi", "Mustarastas", "Punakylkirastas", "Räkättirastas", "Käpylintu", "Käpytikka", "Palokärki", "Tilhi",
         ],
 
         invertebrates: [
